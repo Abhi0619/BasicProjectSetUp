@@ -53,6 +53,7 @@ extension ViewController {
                 if let distData = RawdataConverter.dictionary(jsonData["data"]) {
                     _loggedUser = LoggedUser.createNewEntity(key: "userId", value: RawdataConverter.string(distData["UserId"]))
                     _loggedUser.initWith(distData)
+                    _appDelegator.saveContext()
                     self.naviToHomeViewController()
                 }
             }

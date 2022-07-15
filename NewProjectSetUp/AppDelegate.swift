@@ -113,8 +113,8 @@ extension AppDelegate {
     }
     
     func directLoginToHome() {
-        let vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
-        let vc2 = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarVC")
+        let vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
+        let vc2 = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
         let nav = _appDelegator.window?.rootViewController as! YFNavigationVC
         nav.viewControllers = [vc1, vc2]
         _appDelegator.window?.rootViewController = nav

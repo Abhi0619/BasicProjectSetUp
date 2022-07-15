@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="973.91304347826099" y="36.830357142857139"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NavigationVC-->
         <scene sceneID="9o2-gr-EMX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eWP-9Y-dU1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eWP-9Y-dU1" customClass="YFNavigationVC" customModule="NewProjectSetUp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vei-eJ-PGX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

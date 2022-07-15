@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="x3g-hP-Ecb" customClass="ValidationToast" customModule="MyTabCustomer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynu-wP-oUl" customClass="GradientView" customModule="MyTabCustomer" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvW-Hi-aDO">
+                            <rect key="frame" x="10" y="54" width="394" height="66"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="g7j-6U-fi9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="tvW-Hi-aDO" firstAttribute="leading" secondItem="v31-Wa-jiJ" secondAttribute="leading" constant="10" id="Bnp-Ew-L65"/>
+                        <constraint firstItem="v31-Wa-jiJ" firstAttribute="bottom" secondItem="tvW-Hi-aDO" secondAttribute="bottom" constant="10" id="M1T-8Y-nZQ"/>
+                        <constraint firstItem="tvW-Hi-aDO" firstAttribute="top" secondItem="v31-Wa-jiJ" secondAttribute="top" constant="10" id="XEG-Zt-NWP"/>
+                        <constraint firstItem="v31-Wa-jiJ" firstAttribute="trailing" secondItem="tvW-Hi-aDO" secondAttribute="trailing" constant="10" id="edi-An-JRw"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="v31-Wa-jiJ"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ynu-wP-oUl" firstAttribute="top" secondItem="x3g-hP-Ecb" secondAttribute="top" id="CER-Jm-5Xq"/>
+                <constraint firstItem="ynu-wP-oUl" firstAttribute="leading" secondItem="x3g-hP-Ecb" secondAttribute="leading" id="Uty-7G-oQ0"/>
+                <constraint firstAttribute="bottom" secondItem="ynu-wP-oUl" secondAttribute="bottom" id="XZx-TX-1yR"/>
+                <constraint firstAttribute="trailing" secondItem="ynu-wP-oUl" secondAttribute="trailing" id="sMC-fh-8Ho"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lblMessage" destination="tvW-Hi-aDO" id="csU-6B-Kux"/>
+                <outlet property="viewMessage" destination="ynu-wP-oUl" id="cew-5c-00o"/>
+            </connections>
+            <point key="canvasLocation" x="20.289855072463769" y="-462.05357142857139"/>
+        </view>
+    </objects>
+</document>

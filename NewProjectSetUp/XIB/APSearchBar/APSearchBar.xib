@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="APSearchBar" customModule="FitFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWR-nu-gkG">
+                    <rect key="frame" x="16" y="7" width="348" height="30"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eAl-Uj-J2e">
+                            <rect key="frame" x="0.0" y="0.0" width="348" height="30"/>
+                            <color key="tintColor" name="app_blue_0057a6"/>
+                            <color key="textColor" name="app_black_000000"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="textChange:" destination="iN0-l3-epB" eventType="editingChanged" id="20D-do-bLb"/>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="bDb-2q-RQE"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" name="app_white_#ffffff"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="eAl-Uj-J2e" secondAttribute="bottom" id="fri-Jy-V3l"/>
+                        <constraint firstAttribute="trailing" secondItem="eAl-Uj-J2e" secondAttribute="trailing" id="mHj-wK-paZ"/>
+                        <constraint firstItem="eAl-Uj-J2e" firstAttribute="top" secondItem="WWR-nu-gkG" secondAttribute="top" id="qMp-Ja-8ok"/>
+                        <constraint firstItem="eAl-Uj-J2e" firstAttribute="leading" secondItem="WWR-nu-gkG" secondAttribute="leading" id="yNm-Oq-Fx4"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIo-mH-jGY">
+                    <rect key="frame" x="364" y="0.0" width="50" height="44"/>
+                    <color key="tintColor" name="app_black_#000000"/>
+                    <state key="normal" image="ic_close">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btnCancelTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="ehB-8b-yg4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="app_white_#ffffff"/>
+            <constraints>
+                <constraint firstItem="nIo-mH-jGY" firstAttribute="leading" secondItem="WWR-nu-gkG" secondAttribute="trailing" id="7R2-iE-n7E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nIo-mH-jGY" secondAttribute="trailing" id="MyX-s4-VW0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WWR-nu-gkG" secondAttribute="bottom" constant="7" id="RG8-Fx-uuI"/>
+                <constraint firstItem="WWR-nu-gkG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="7" id="eDh-Ic-ejb"/>
+                <constraint firstItem="nIo-mH-jGY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="p1e-6Z-KKc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nIo-mH-jGY" secondAttribute="bottom" id="q3c-UK-Bon"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WWR-nu-gkG" secondAttribute="trailing" constant="50" id="stj-rI-sFT"/>
+                <constraint firstItem="WWR-nu-gkG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="u63-a5-ygz"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tfSearch" destination="eAl-Uj-J2e" id="rEM-ph-9DB"/>
+            </connections>
+            <point key="canvasLocation" x="-170" y="-212"/>
+        </view>
+        <view contentMode="scaleToFill" id="xV0-Sw-8vv" customClass="APSearchBar" customModule="FitFin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixw-hU-UMw">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="backgroundColor" name="app_light_green_006622"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pYN-Py-HpM">
+                    <rect key="frame" x="0.0" y="0.0" width="399" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rb5-bH-vjH">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="STK-RD-xMH"/>
+                                <constraint firstAttribute="width" constant="50" id="Vc5-8I-mdq"/>
+                            </constraints>
+                            <color key="tintColor" name="app_white_ffffff"/>
+                            <state key="normal" image="ic_back">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="btnCancelTap:" destination="xV0-Sw-8vv" eventType="touchUpInside" id="hzN-GH-moL"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myS-Cy-N25">
+                            <rect key="frame" x="54" y="0.0" width="345" height="44"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-jT-YXn">
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
+                                    <color key="tintColor" name="app_white_ffffff"/>
+                                    <color key="textColor" name="app_white_ffffff"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                            <color key="value" name="app_white_ffffff"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="textChange:" destination="xV0-Sw-8vv" eventType="editingChanged" id="DMk-f8-ZKv"/>
+                                        <outlet property="delegate" destination="xV0-Sw-8vv" id="Yce-YO-lBA"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" name="app_light_green_006622"/>
+                            <constraints>
+                                <constraint firstItem="BZe-jT-YXn" firstAttribute="leading" secondItem="myS-Cy-N25" secondAttribute="leading" id="BMN-0p-F3c"/>
+                                <constraint firstAttribute="trailing" secondItem="BZe-jT-YXn" secondAttribute="trailing" id="JYC-mh-Upc"/>
+                                <constraint firstItem="BZe-jT-YXn" firstAttribute="top" secondItem="myS-Cy-N25" secondAttribute="top" id="JdI-wJ-heJ"/>
+                                <constraint firstAttribute="bottom" secondItem="BZe-jT-YXn" secondAttribute="bottom" id="KbF-gW-KSY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnH-xQ-mhF">
+                    <rect key="frame" x="0.0" y="43" width="414" height="1"/>
+                    <color key="backgroundColor" name="text_black"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="8DJ-HD-ceW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="app_black_000000"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Thk-Ch-AxH"/>
+            <color key="backgroundColor" name="app_light_green_006622"/>
+            <constraints>
+                <constraint firstItem="Thk-Ch-AxH" firstAttribute="bottom" secondItem="QnH-xQ-mhF" secondAttribute="bottom" id="1Ck-rB-hLn"/>
+                <constraint firstAttribute="top" secondItem="ixw-hU-UMw" secondAttribute="top" id="2VD-GL-vFj"/>
+                <constraint firstItem="pYN-Py-HpM" firstAttribute="top" secondItem="Thk-Ch-AxH" secondAttribute="top" id="8qU-LU-JxE"/>
+                <constraint firstItem="pYN-Py-HpM" firstAttribute="leading" secondItem="Thk-Ch-AxH" secondAttribute="leading" id="LOm-Dk-pPP"/>
+                <constraint firstItem="QnH-xQ-mhF" firstAttribute="leading" secondItem="Thk-Ch-AxH" secondAttribute="leading" id="UnD-9j-5vp"/>
+                <constraint firstItem="pYN-Py-HpM" firstAttribute="trailing" secondItem="Thk-Ch-AxH" secondAttribute="trailing" constant="-15" id="a7F-PA-ukv"/>
+                <constraint firstItem="QnH-xQ-mhF" firstAttribute="trailing" secondItem="Thk-Ch-AxH" secondAttribute="trailing" id="avr-bZ-Kgn"/>
+                <constraint firstItem="Thk-Ch-AxH" firstAttribute="trailing" secondItem="ixw-hU-UMw" secondAttribute="trailing" id="dxi-CM-lSW"/>
+                <constraint firstAttribute="bottom" secondItem="ixw-hU-UMw" secondAttribute="bottom" id="hAL-ab-rbC"/>
+                <constraint firstAttribute="bottom" secondItem="pYN-Py-HpM" secondAttribute="bottom" id="k3R-Re-pkz"/>
+                <constraint firstItem="ixw-hU-UMw" firstAttribute="leading" secondItem="Thk-Ch-AxH" secondAttribute="leading" id="nqS-qs-nrJ"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="tfSearch" destination="BZe-jT-YXn" id="ssG-0f-laW"/>
+            </connections>
+            <point key="canvasLocation" x="-171.01449275362319" y="-129.61956521739131"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_back" width="16" height="16"/>
+        <image name="ic_close" width="19" height="19"/>
+        <namedColor name="app_black_#000000">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="app_black_000000">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="app_blue_0057a6">
+            <color red="0.0" green="0.33725490196078434" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="app_light_green_006622">
+            <color red="0.0" green="0.40000000000000002" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="app_white_#ffffff">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="app_white_ffffff">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_black">
+            <color red="0.1803921568627451" green="0.20392156862745098" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

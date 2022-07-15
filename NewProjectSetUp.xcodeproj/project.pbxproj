@@ -125,6 +125,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		932C3E4628813556001D34AE /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D21FA5A227A7A67F0056C21B /* Main.storyboard */,
+				D21FA5AA27A7A6800056C21B /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		D21FA59027A7A67F0056C21B = {
 			isa = PBXGroup;
 			children = (
@@ -150,9 +159,8 @@
 				D21FA5EA27A7A7D40056C21B /* Model */,
 				D21FA5FF27A7B2CA0056C21B /* XIB */,
 				D21FA5B327A7A76C0056C21B /* OtherClasses */,
-				D21FA5A227A7A67F0056C21B /* Main.storyboard */,
+				932C3E4628813556001D34AE /* StoryBoard */,
 				D21FA5A827A7A6800056C21B /* Assets.xcassets */,
-				D21FA5AA27A7A6800056C21B /* LaunchScreen.storyboard */,
 				D21FA5AD27A7A6800056C21B /* Info.plist */,
 				D21FA5A527A7A67F0056C21B /* NewProjectSetUp.xcdatamodeld */,
 			);

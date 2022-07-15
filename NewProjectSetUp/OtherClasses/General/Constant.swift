@@ -34,7 +34,7 @@ let _appDelegator = { return UIApplication.shared.delegate! as! AppDelegate }()
 let _application = { return UIApplication.shared }()
 let _statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
 
-//var _loggedUser: LoggedUser!
+var _loggedUser: LoggedUser!
 
 var _safeAreaInsets: UIEdgeInsets {
     get {

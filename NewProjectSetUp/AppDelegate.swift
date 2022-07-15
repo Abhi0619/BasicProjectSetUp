@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-
+import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        if #available(iOS 13, *) {
+        }else{
+            prepareForDirectLogin()
+        }
         return true
     }
 
@@ -79,3 +85,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: - User Methods
+extension AppDelegate {
+    
+    func prepareForDirectLogin() {
+        
+//        WebService.shared.isInternetAvailable()
+        
+        if isUserLoggedIn() {
+            // Set Access token in Http header
+            jprint("Auth_token: \(_loggedUser.accessToken)")
+            WebService.shared.storeAuthorizationToken(_loggedUser.accessToken)
+//            UNUserNotificationCenter.current().delegate = self
+            // Directly Login
+            directLoginToHome()
+         }
+    }
+    
+    func isUserLoggedIn() -> Bool {
+        let users = LoggedUser.fetch(predicate: nil, sortDescs: nil)
+        if let user = users.first {
+            _loggedUser = user
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func directLoginToHome() {
+        let vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+        let vc2 = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarVC")
+        let nav = _appDelegator.window?.rootViewController as! YFNavigationVC
+        nav.viewControllers = [vc1, vc2]
+        _appDelegator.window?.rootViewController = nav
+    }
+        
+    func prepareToLogout(sessionExpired expired: Bool = false) {
+        self.window?.rootViewController?.dismiss(animated: false, completion: nil)
+        if let navigationvc = _appDelegator.window?.rootViewController as? UINavigationController {
+            navigationvc.presentingViewController?.dismiss(animated: false, completion: nil)
+            navigationvc.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+            navigationvc.popToRootViewController(animated: false)
+        }
+        self.removeAllRecordFromDBAndCache()
+        
+        // Clear all notifications
+        UIApplication.shared.applicationIconBadgeNumber = 0 // For Clear Badge Counts
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications() // To remove all delivered notifications
+        center.removeAllPendingNotificationRequests() // To remove all pending notifications which are not delivered yet but scheduled.
+ 
+        if expired {
+            // if any required for expried action
+        }
+    }
+    
+    // Remove all record from DB and cCache
+    func removeAllRecordFromDBAndCache(_ removeAccessToken: Bool = true) {
+        let loggedUser = LoggedUser.fetch(predicate: nil, sortDescs: nil)
+        LoggedUser.delete(removeObjects: loggedUser)
+        _loggedUser = nil
+
+        var deviceToken: String = ""
+        if let token = APKeychainWrapper.shared.string(forKey: "deviceToken") {
+            deviceToken = token
+        }
+        
+//        _defaultCenter.setValue(deviceToken.hexString(), forKey: "deviceToken")
+//            defDeviceToken = _userDefault.string(forKey: "deviceToken") ?? ""
+        
+//        if removeAccessToken {
+            // Remove Access token form Header
+            WebService.shared.removedAuthoriaztionToken()
+//        }
+        
+        
+        APKeychainWrapper.shared.set(deviceToken, forKey: "deviceToken")
+//        _userDefault.setValue(defDeviceToken, forKey: "deviceToken")
+//        unRegisterNotification()
+    }
+}
